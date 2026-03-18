@@ -16,13 +16,19 @@ def ticker_summary(id):
     print(f'今日最高價{info.get("dayHigh")}')
     print(f'今日最低價{info.get("dayLow")}')
     print(f'目前價格{info.get("last_price")}')
-    print(f'成交量{info.get("last_volume")}')     
+    print(f'成交量{info.get("last_volume")}')
+
+def ticker_download():
+    stocks=["2330.TW", "2345.TW", "MSFT", "NVDA", "APLE","TSLA"]
+    datas = yf.download(stocks, period="3d")
+    print(datas)     
           
 
 
 #stock_info('2330.TW')
 #stock_info('3533.TW')
-print('------------台積電------------')
-ticker_summary('2330.TW')
-print('------------嘉澤------------')
-ticker_summary('3533.TW')
+#print('------------台積電------------')
+#ticker_summary('2330.TW')
+#print('------------嘉澤------------')
+#ticker_summary('3533.TW')
+ticker_download()
